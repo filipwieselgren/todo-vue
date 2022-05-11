@@ -1,0 +1,112 @@
+<template>
+  <div class="main-container">
+    <AddItems @addItem="handleAddItem($event)" />
+    <!-- <div class="list-con"> -->
+    <div
+      v-for="item in items"
+      :key="item.id"
+      :class="['list', { listDone: item.done }]"
+    >
+      <div class="list-item">{{ item.item }}</div>
+
+      <div class="btn-con">
+        <Btn
+          :itemlist="item.id"
+          @removeItem="remove($event)"
+          @doneItem="done($event)"
+        />
+      </div>
+    </div>
+    <!-- </div> -->
+  </div>
+</template>
+
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+
+import AddItems from "./AddItems.vue";
+import { Item } from "@/models/Item";
+import Btn from "./Btn.vue";
+
+@Options({
+  components: {
+    AddItems,
+    Btn,
+  },
+})
+export default class HandleEvents extends Vue {
+  items: Item[] = [];
+  isDone = false;
+
+  handleAddItem(it: Item) {
+    this.items.push(it);
+
+    localStorage.setItem("item", JSON.stringify(this.items));
+  }
+
+  remove(ri: number) {
+    this.items = this.items.filter((item) => {
+      return item.id !== ri;
+    });
+
+    localStorage.setItem("item", JSON.stringify(this.items));
+  }
+
+  done(ri: number) {
+    this.items.forEach((item) => {
+      if (item.id === ri) {
+        item.done = !this.isDone;
+        localStorage.setItem("item", JSON.stringify(this.items));
+      } else {
+        return;
+      }
+    });
+  }
+
+  mounted() {
+    if (localStorage.getItem("item") != null) {
+      this.items = JSON.parse(localStorage.getItem("item") || "[]");
+    } else {
+      return;
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.main-container {
+  // border: 1px solid red;
+  width: 80%;
+  height: fit-content;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  // border: 1px solid blue;
+  border-bottom: 1px solid #333;
+  margin-bottom: 10px;
+  .list-item {
+    max-width: 50%;
+    overflow: auto;
+    // border: 1px solid pink;
+  }
+}
+
+.listDone {
+  text-decoration: line-through;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-container {
+    width: 33%;
+  }
+}
+</style>

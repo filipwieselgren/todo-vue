@@ -1,27 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <HandleEvents />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
+import HandleEvents from "./components/HandleEvents.vue";
 
 @Options({
   components: {
-    HelloWorld,
+    HandleEvents,
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-padding {
+  padding: 10px;
+  margin: 5px;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
 }
 </style>
