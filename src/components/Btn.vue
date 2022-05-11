@@ -1,6 +1,8 @@
 <template>
-  <button @click="handleRemove" class="btn btn-padding">Remove</button>
-  <button @click="handleDone" class="btn btn-padding">Done</button>
+  <button @click="handleDone" class="btn btn-done btn-padding">Done</button>
+  <button @click="handleRemove" class="btn btn-remove btn-padding">
+    Remove
+  </button>
 </template>
 
 <script lang="ts">
@@ -23,5 +25,12 @@ export default class Btn extends Vue {
 <style scoped lang="scss">
 .btn-con {
   display: flex;
+}
+
+.btn-remove {
+  background-color: rgba(255, 0, 0, 0.186);
+}
+.btn-done {
+  background-color: green;
 }
 </style>

@@ -1,7 +1,11 @@
 <template>
   <div>
-    <button @click="newItem">Sort by newest todo</button>
-    <button @click="oldItem">Sort by oldest todo</button>
+    <button @click="newItem" class="btn-padding btn-sort">
+      Sort by newest todo
+    </button>
+    <button @click="oldItem" class="btn-padding btn-sort">
+      Sort by oldest todo
+    </button>
   </div>
 </template>
 
@@ -19,4 +23,9 @@ export default class Sort extends Vue {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.btn-sort {
+  border: none;
+  border-radius: 5px;
+}
+</style>

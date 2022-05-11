@@ -108,6 +108,7 @@ export default class HandleEvents extends Vue {
   margin-bottom: 10px;
   .list-item {
     max-width: 50%;
+    min-width: 33%;
     overflow: auto;
     // border: 1px solid pink;
   }
@@ -115,6 +116,8 @@ export default class HandleEvents extends Vue {
 
 .listDone {
   text-decoration: line-through;
+  color: green;
+  position: relative;
 }
 
 @media only screen and (min-width: 768px) {
