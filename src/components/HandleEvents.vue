@@ -77,7 +77,7 @@ export default class HandleEvents extends Vue {
   sortOldItem() {
     this.items.sort((todoA, todoB) => todoA.date - todoB.date);
 
-    this.items.map((o) => o.item);
+    this.items.map((item) => item.item);
 
     localStorage.setItem("item", JSON.stringify(this.items));
   }
