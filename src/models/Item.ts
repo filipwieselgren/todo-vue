@@ -1,3 +1,8 @@
 export class Item {
-  constructor(public item: string, public id: number, public done: boolean) {}
+  constructor(
+    public item: string,
+    public id: number,
+    public done: boolean,
+    public date: number
+  ) {}
 }

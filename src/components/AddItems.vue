@@ -23,15 +23,17 @@ export default class AddItems extends Vue {
   error!: string;
   id = 0;
   done = false;
+  date = 0;
   novalue = false;
   items: Item[] = [];
 
   handleSubmit() {
     const newId: any = Math.random();
+    const newDate: number = Date.now();
 
     if (this.item) {
       this.item;
-      this.$emit("addItem", new Item(this.item, newId, this.done));
+      this.$emit("addItem", new Item(this.item, newId, this.done, newDate));
       this.item = "";
       this.novalue = false;
     } else {

@@ -1,4 +1,5 @@
 <template>
+  <Sort @handleNewItem="sortNewItem()" @handleOldItem="sortOldItem()" />
   <div class="main-container">
     <AddItems @addItem="handleAddItem($event)" />
     <!-- <div class="list-con"> -->
@@ -27,11 +28,13 @@ import { Options, Vue } from "vue-class-component";
 import AddItems from "./AddItems.vue";
 import { Item } from "@/models/Item";
 import Btn from "./Btn.vue";
+import Sort from "./Sort.vue";
 
 @Options({
   components: {
     AddItems,
     Btn,
+    Sort,
   },
 })
 export default class HandleEvents extends Vue {
@@ -61,6 +64,15 @@ export default class HandleEvents extends Vue {
         return;
       }
     });
+  }
+
+  sortNewItem() {
+    console.log("sortNewItem funkar");
+    this.items.sort();
+  }
+
+  sortOldItem() {
+    console.log("sortOldItem funkar");
   }
 
   mounted() {
