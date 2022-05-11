@@ -38,7 +38,8 @@ export default class AddItems extends Vue {
       this.novalue = false;
     } else {
       this.novalue = true;
-      this.error = "Inget värde";
+      this.error =
+        "Du har missat att skriva en todo. Kanske ska din första todo vara att skriva en? 😉";
     }
   }
 }
