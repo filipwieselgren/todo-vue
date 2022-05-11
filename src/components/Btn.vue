@@ -11,14 +11,10 @@ export default class Btn extends Vue {
   @Prop() itemlist!: number;
 
   handleRemove() {
-    console.log("klickat på handleRemove i Btn", this.itemlist);
-
     this.$emit("removeItem", this.itemlist);
   }
 
   handleDone() {
-    console.log("klickat på handleDone i Btn", this.itemlist);
-
     this.$emit("doneItem", this.itemlist);
   }
 }

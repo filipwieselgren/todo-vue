@@ -67,12 +67,19 @@ export default class HandleEvents extends Vue {
   }
 
   sortNewItem() {
-    console.log("sortNewItem funkar");
-    this.items.sort();
+    this.items.sort((todoA, todoB) => todoB.date - todoA.date);
+
+    this.items.map((item) => item.item);
+
+    localStorage.setItem("item", JSON.stringify(this.items));
   }
 
   sortOldItem() {
-    console.log("sortOldItem funkar");
+    this.items.sort((todoA, todoB) => todoA.date - todoB.date);
+
+    this.items.map((o) => o.item);
+
+    localStorage.setItem("item", JSON.stringify(this.items));
   }
 
   mounted() {
