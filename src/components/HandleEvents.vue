@@ -2,23 +2,23 @@
   <Sort @handleNewItem="sortNewItem()" @handleOldItem="sortOldItem()" />
   <div class="main-container">
     <AddItems @addItem="handleAddItem($event)" />
-    <!-- <div class="list-con"> -->
-    <div
-      v-for="item in items"
-      :key="item.id"
-      :class="['list', { listDone: item.done }]"
-    >
-      <div class="list-item">{{ item.item }}</div>
+    <div class="list-con">
+      <div
+        v-for="item in items"
+        :key="item.id"
+        :class="['list', { listDone: item.done }]"
+      >
+        <div class="list-item">{{ item.item }}</div>
 
-      <div class="btn-con">
-        <Btn
-          :itemlist="item.id"
-          @removeItem="remove($event)"
-          @doneItem="done($event)"
-        />
+        <div class="btn-con">
+          <Btn
+            :itemlist="item.id"
+            @removeItem="remove($event)"
+            @doneItem="done($event)"
+          />
+        </div>
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </template>
 
@@ -98,6 +98,9 @@ export default class HandleEvents extends Vue {
 <style scoped lang="scss">
 .main-container {
   width: 80%;
+}
+
+.list-con {
   max-height: 50vh;
   overflow: scroll;
 }
