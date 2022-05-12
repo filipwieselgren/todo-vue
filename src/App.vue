@@ -19,6 +19,12 @@ export default class App extends Vue {}
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  background-color: antiquewhite;
 }
 #app {
   margin-top: 10em;
@@ -33,7 +39,15 @@ export default class App extends Vue {}
 }
 
 .btn {
-  border: none;
+  // border: none;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #333;
+  box-shadow: 3px 3px 1px 1px #494949;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: -3px -3px 1px 1px #494949;
 }
 </style>

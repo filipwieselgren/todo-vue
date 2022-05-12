@@ -7,7 +7,11 @@
         placeholder="Add todo"
         class="input btn-padding"
       />
-      <button type="button" @click="handleSubmit" class="btn btn-padding">
+      <button
+        type="button"
+        @click="handleSubmit"
+        class="btn btn-padding btn-submit"
+      >
         Submit
       </button>
     </form>
@@ -61,10 +65,16 @@ export default class AddItems extends Vue {
   border: none;
   border-bottom: 1px solid #333;
   margin: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 80%;
 }
 
 .error {
   width: 100%;
   text-align: center;
+}
+
+.btn-submit {
+  box-shadow: 3px 3px 1px 1px #494949;
 }
 </style>
