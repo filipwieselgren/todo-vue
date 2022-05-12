@@ -1,10 +1,10 @@
 <template>
   <nav class="sort-container">
     <button @click="newItem" class="btn-padding btn-sort btn">
-      Sort by newest todo
+      Sort by newest to oldest todo
     </button>
     <button @click="oldItem" class="btn-padding btn-sort btn">
-      Sort by oldest todo
+      Sort by oldest to newest todo
     </button>
   </nav>
 </template>

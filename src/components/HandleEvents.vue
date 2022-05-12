@@ -57,8 +57,11 @@ export default class HandleEvents extends Vue {
 
   done(ri: number) {
     this.items.forEach((item) => {
-      if (item.id === ri) {
-        item.done = !this.isDone;
+      if (item.id === ri && this.isDone === false) {
+        item.done = this.isDone = true;
+        localStorage.setItem("item", JSON.stringify(this.items));
+      } else if (item.id === ri && this.isDone === true) {
+        item.done = this.isDone = false;
         localStorage.setItem("item", JSON.stringify(this.items));
       } else {
         return;
@@ -95,7 +98,8 @@ export default class HandleEvents extends Vue {
 <style scoped lang="scss">
 .main-container {
   width: 80%;
-  height: fit-content;
+  max-height: 50vh;
+  overflow: scroll;
 }
 
 .list {

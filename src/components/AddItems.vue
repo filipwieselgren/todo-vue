@@ -16,7 +16,9 @@
       </button>
     </form>
   </div>
-  <div v-if="novalue" class="error">{{ error }}</div>
+  <div v-if="novalue" class="error">
+    <div>{{ error }}</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -43,7 +45,7 @@ export default class AddItems extends Vue {
     } else {
       this.novalue = true;
       this.error =
-        "Du har missat att skriva en todo. Kanske ska din första todo vara att skriva en? 😉";
+        "Du har missat att skriva en todo. Kanske en todo kan vara att skriva en? 😉";
     }
   }
 }
@@ -73,9 +75,9 @@ export default class AddItems extends Vue {
   color: #333;
 }
 
-.error {
-  width: 100%;
+.error > div {
   text-align: center;
+  color: #333;
 }
 
 .btn-submit {

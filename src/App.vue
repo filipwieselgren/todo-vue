@@ -24,7 +24,7 @@ export default class App extends Vue {}
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: rgb(163, 210, 249);
 }
 #app {
   margin-top: 10em;
@@ -39,7 +39,6 @@ body {
 }
 
 .btn {
-  // border: none;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #333;
