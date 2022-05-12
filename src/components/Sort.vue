@@ -1,10 +1,10 @@
 <template>
   <nav class="sort-container">
     <button @click="newItem" class="btn-padding btn-sort btn">
-      Sort by newest to oldest todo
+      Sort by newest todo
     </button>
     <button @click="oldItem" class="btn-padding btn-sort btn">
-      Sort by oldest to newest todo
+      Sort by oldest todo
     </button>
   </nav>
 </template>
@@ -24,10 +24,15 @@ export default class Sort extends Vue {
 </script>
 
 <style scoped lang="scss">
+.sort-container {
+  display: flex;
+  justify-content: center;
+}
 .btn-sort {
   border: 1px solid #333;
   border-radius: 5px;
   color: #333;
+  width: 50%;
 }
 
 .sort-container {
