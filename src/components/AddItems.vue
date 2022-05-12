@@ -69,6 +69,10 @@ export default class AddItems extends Vue {
   width: 80%;
 }
 
+.input::placeholder {
+  color: #333;
+}
+
 .error {
   width: 100%;
   text-align: center;
@@ -76,5 +80,6 @@ export default class AddItems extends Vue {
 
 .btn-submit {
   box-shadow: 3px 3px 1px 1px #494949;
+  color: #333;
 }
 </style>

@@ -94,7 +94,6 @@ export default class HandleEvents extends Vue {
 
 <style scoped lang="scss">
 .main-container {
-  // border: 1px solid red;
   width: 80%;
   height: fit-content;
 }
@@ -103,14 +102,12 @@ export default class HandleEvents extends Vue {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  // border: 1px solid blue;
   border-bottom: 1px solid #333;
   margin-bottom: 10px;
   .list-item {
     max-width: 50%;
     min-width: 33%;
     overflow: auto;
-    // border: 1px solid pink;
   }
 }
 

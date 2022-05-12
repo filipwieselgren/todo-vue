@@ -27,6 +27,7 @@ export default class Sort extends Vue {
 .btn-sort {
   border: 1px solid #333;
   border-radius: 5px;
+  color: #333;
 }
 
 .sort-container {

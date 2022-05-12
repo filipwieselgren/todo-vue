@@ -28,9 +28,12 @@ export default class Btn extends Vue {
 }
 
 .btn-remove {
-  background-color: rgba(255, 0, 0, 0.186);
+  background-color: rgb(128, 48, 48);
+  color: antiquewhite;
 }
+
 .btn-done {
   background-color: green;
+  color: antiquewhite;
 }
 </style>
